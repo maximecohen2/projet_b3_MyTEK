@@ -1,1 +1,6 @@
 # gitignore
+.project
+.settings
+.classpath
+.metadata
+.externalToolBuilders
