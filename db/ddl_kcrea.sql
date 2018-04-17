@@ -75,9 +75,17 @@ CREATE TABLE Profil
   CONSTRAINT FK_profil_account FOREIGN KEY (profil_account) REFERENCES Account(account_id)
 );
 
+CREATE TABLE TypeMedia
+(
+  typemedia_id INT NOT NULL,
+  typemedia_label VARCHAR(100) NOT NULL,
+  CONSTRAINT PK_typemedia_id PRIMARY KEY (typemedia_id)
+);
+
 CREATE TABLE Media
 (
   media_id INT NOT NULL,
+  media_type INT NOT NULL,
   media_title VARCHAR(100) NOT NULL,
   media_synopsis TEXT NULL,
   media_image VARCHAR(255) NULL,
@@ -86,6 +94,7 @@ CREATE TABLE Media
   media_release_date DATE NULL,
   media_certification INT NULL,
   CONSTRAINT PK_media_id PRIMARY KEY (media_id),
+  CONSTRAINT FK_media_type FOREIGN KEY (media_type) REFERENCES TypeMedia(typemedia_id),
   CONSTRAINT FK_media_nationality FOREIGN KEY (media_nationality) REFERENCES Nationality(nationality_id)
 );
 
@@ -97,4 +106,20 @@ CREATE TABLE MediaGenre
   CONSTRAINT PK_mediagenre_id PRIMARY KEY (mediagenre_id),
   CONSTRAINT FK_mediagenre_media FOREIGN KEY (mediagenre_media) REFERENCES Media(media_id),
   CONSTRAINT FK_mediagenre_genre FOREIGN KEY (mediagenre_genre) REFERENCES Genre(genre_id)
+);
+
+CREATE TABLE Score
+(
+  score_id INT NOT NULL,
+  score_media INT NOT NULL,
+  score_profil INT NOT NULL,
+  score_comment TEXT NULL,
+  CONSTRAINT PK_score_id PRIMARY KEY (score_id),
+  CONSTRAINT FK_score_media FOREIGN KEY (score_media) REFERENCES Media(media_id),
+  CONSTRAINT FK_score_profil FOREIGN KEY (score_profil) REFERENCES Profil(profil_id)
+);
+
+CREATE TABLE Episode
+(
+  episode_id INT NOT NULL,
 );
