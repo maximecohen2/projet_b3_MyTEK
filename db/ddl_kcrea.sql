@@ -98,6 +98,18 @@ CREATE TABLE Media
   CONSTRAINT FK_media_nationality FOREIGN KEY (media_nationality) REFERENCES Nationality(nationality_id)
 );
 
+CREATE TABLE Episode
+(
+  episode_id INT NOT NULL,
+  episode_media INT NOT NULL,
+  episode_number INT NOT NULL,
+  episode_season INT NOT NULL,
+  episode_parent INT NOT NULL,
+  CONSTRAINT PK_episode_id PRIMARY KEY (episode_id),
+  CONSTRAINT FK_episode_media FOREIGN KEY (episode_media) REFERENCES Media(media_id)
+  CONSTRAINT FK_episode_parent FOREIGN KEY (episode_parent) REFERENCES Media(media_id)
+);
+
 CREATE TABLE MediaGenre
 (
   mediagenre_id INT NOT NULL,
@@ -117,9 +129,4 @@ CREATE TABLE Score
   CONSTRAINT PK_score_id PRIMARY KEY (score_id),
   CONSTRAINT FK_score_media FOREIGN KEY (score_media) REFERENCES Media(media_id),
   CONSTRAINT FK_score_profil FOREIGN KEY (score_profil) REFERENCES Profil(profil_id)
-);
-
-CREATE TABLE Episode
-(
-  episode_id INT NOT NULL,
 );
