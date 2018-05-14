@@ -1,3 +1,4 @@
+DROP TABLE MediaCelebrity;
 DROP TABLE Score;
 DROP TABLE MediaGenre;
 DROP TABLE Media;
@@ -111,10 +112,10 @@ CREATE TABLE Episode
   episode_media INT NOT NULL,
   episode_number INT NOT NULL,
   episode_season INT NOT NULL,
-  episode_parent INT NOT NULL,
+  episode_series INT NOT NULL,
   CONSTRAINT PK_episode_id PRIMARY KEY (episode_id),
-  CONSTRAINT FK_episode_media FOREIGN KEY (episode_media) REFERENCES Media(media_id)
-  CONSTRAINT FK_episode_parent FOREIGN KEY (episode_parent) REFERENCES Media(media_id)
+  CONSTRAINT FK_episode_media FOREIGN KEY (episode_media) REFERENCES Media(media_id),
+  CONSTRAINT FK_episode_series FOREIGN KEY (episode_series) REFERENCES Media(media_id)
 );
 
 CREATE TABLE MediaGenre
@@ -133,12 +134,18 @@ CREATE TABLE Score
   score_media INT NOT NULL,
   score_profil INT NOT NULL,
   score_comment TEXT NULL,
+  score_value INT NOT NULL,
   CONSTRAINT PK_score_id PRIMARY KEY (score_id),
   CONSTRAINT FK_score_media FOREIGN KEY (score_media) REFERENCES Media(media_id),
   CONSTRAINT FK_score_profil FOREIGN KEY (score_profil) REFERENCES Profil(profil_id)
 );
 
-/*CREATE TABLE Episode
+CREATE TABLE MediaCelebrity
 (
-  episode_id INT NOT NULL,
-);*/
+  mediacelebrity_id INT NOT NULL,
+  mediacelebrity_character VARCHAR(255) NOT NULL,
+  mediacelebrity_role VARCHAR(255) NOT NULL,
+  mediacelebrity_media INT NOT NULL,
+  CONSTRAINT PK_mediacelebrity_id PRIMARY KEY (mediacelebrity_id),
+  CONSTRAINT FK_mediacelebrity_media FOREIGN KEY (mediacelebrity_media) REFERENCES Media(media_id)
+);
