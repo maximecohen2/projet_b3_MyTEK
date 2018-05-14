@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>epsi.b3.kcrea</groupId>
-    <artifactId>serverJava</artifactId>
+    <groupId>api</groupId>
+    <artifactId>SimpleJersey</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencyManagement>
