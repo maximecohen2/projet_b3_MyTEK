@@ -1,8 +1,15 @@
-DROP TABLE RoleProfil;
-DROP TABLE RoleGroup;
-DROP TABLE Account;
-DROP TABLE Person;
+DROP TABLE Score;
+DROP TABLE MediaGenre;
+DROP TABLE Media;
+DROP TABLE TypeMedia;
 DROP TABLE Profil;
+DROP TABLE Celebrity;
+DROP TABLE Person;
+DROP TABLE Account;
+DROP TABLE Genre;
+DROP TABLE Nationality;
+DROP TABLE RoleGroup;
+DROP TABLE RoleProfil;
 
 CREATE TABLE RoleProfil
 (
@@ -119,7 +126,7 @@ CREATE TABLE Score
   CONSTRAINT FK_score_profil FOREIGN KEY (score_profil) REFERENCES Profil(profil_id)
 );
 
-CREATE TABLE Episode
+/*CREATE TABLE Episode
 (
   episode_id INT NOT NULL,
-);
+);*/
