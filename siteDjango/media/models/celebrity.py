@@ -1,5 +1,8 @@
 from django.db import models
 
-class celebrity(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+from siteDjango.user.models import Person
+
+
+class Celebrity(models.Model):
+    bio = models.TextField()
+    person = models.OneToOneField(Person)
