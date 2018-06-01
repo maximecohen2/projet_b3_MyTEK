@@ -54,3 +54,7 @@ docs/_build/
 
 # Database
 *.sqlite3
+
+# VirtualEnv
+venv
+.venv

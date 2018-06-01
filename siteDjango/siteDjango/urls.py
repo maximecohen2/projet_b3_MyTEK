@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('connexion/', TemplateView.as_view(template_name='Connexion.html')),
+    url('connexion/', TemplateView.as_view(template_name='connexion.html')),
 #    path('user/', include('user.urls')),
 #    path('group/', include('group.urls')),
 #    path('media/', include('mediatheque.urls')),
