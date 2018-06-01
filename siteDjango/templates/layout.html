@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,17 +19,19 @@
 
     {% endblock %}
 
-  </head>
-
+</head>
+<body>
 {% block content %}
 
 {% endblock %}
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  {% block js %}
+<!-- Bootstrap core JavaScript -->
+<script src="{%  static "vendor/jquery/jquery.min.js" %}"></script>
+<script src="{%  static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+{% block js %}
 
-  {% endblock %}
+{% endblock %}
+
+</body>
 
 </html>
