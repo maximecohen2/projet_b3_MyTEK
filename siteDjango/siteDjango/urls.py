@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('connexion/', TemplateView.as_view(template_name='connexion.html')),
 #    path('user/', include('user.urls')),
+    #path('profil/', include('profil.urls')),
+    url('profil/', TemplateView.as_view(template_name='profil.html')),
 #    path('group/', include('group.urls')),
 #    path('media/', include('mediatheque.urls')),
 ]
