@@ -13,7 +13,8 @@ class Media(models.Model):
         ('US', 'Etats-Unies'),
     )
 
-    type = models.IntegerField(
+    type = models.CharField(
+        max_length=1,
         verbose_name="Type de Media",
         choices=MEDIA_TYPE
     )

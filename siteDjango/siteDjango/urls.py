@@ -21,10 +21,12 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('connexion/', TemplateView.as_view(template_name='connexion.html')),
+    url('connexion/', TemplateView.as_view(template_name='connexion.html'), name='connexion'),
+    url('register/', TemplateView.as_view(template_name='inscription.html'), name='register'),
 #    path('user/', include('user.urls')),
     #path('profil/', include('profil.urls')),
     url('profil/', TemplateView.as_view(template_name='profil.html')),
+    path('media/', include('media.urls')),
 #    path('group/', include('group.urls')),
 #    path('media/', include('mediatheque.urls')),
 ]
