@@ -1,11 +1,26 @@
 from django.db import models
 
-from siteDjango.media.models.media import Media
-from siteDjango.media.models.serie import Serie
+from media.models.media import Media
 
 
 class Episode(models.Model):
-    media = models.OneToOneField(Media)
-    number = models.IntegerField()
-    season = models.IntegerField()
-    series = models.OneToOneField(Serie)
+    media = models.OneToOneField(
+        Media,
+        verbose_name="Media",
+        on_delete=models.CASCADE
+    )
+
+    number = models.IntegerField(
+        verbose_name="Numéro de l'épisode"
+    )
+
+    season = models.IntegerField(
+        verbose_name="Saison de l'épisode"
+    )
+
+    serie = models.ForeignKey(
+        Media,
+        verbose_name="Série",
+        on_delete=models.CASCADE,
+        related_name="+"
+    )
