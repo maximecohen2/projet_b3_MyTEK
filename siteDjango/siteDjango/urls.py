@@ -30,5 +30,5 @@ urlpatterns = [
     url('profil/', TemplateView.as_view(template_name='profil.html')),
     path('media/', include('media.urls')),
 #    path('group/', include('group.urls')),
-#    path('media/', include('mediatheque.urls')),
+#    path('media/', include('mediatek.urls')),
 ]
