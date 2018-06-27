@@ -13,13 +13,16 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PlayList</a>
+                        <a class="nav-link" href="{% url 'playlist' %}">PlayList</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Group</a>
+                        <a class="nav-link" href="{% url 'grouplist' %}">Group</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log out</a>
+                        <a class="nav-link" href="{% url 'profil' %}">Profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Log out</a>
                     </li>
                 </ul>
             </div>
