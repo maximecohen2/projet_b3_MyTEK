@@ -25,10 +25,10 @@ urlpatterns = [
     url('register/', TemplateView.as_view(template_name='inscription.html'), name='register'),
     url('index/', TemplateView.as_view(template_name='index.html'), name='index'),
     url('profil/', TemplateView.as_view(template_name='profil.html'), name='profil'),
-#    path('user/', include('user.urls')),
+    #    path('user/', include('user.urls')),
     #path('profil/', include('profil.urls')),
     url('profil/', TemplateView.as_view(template_name='profil.html')),
     path('media/', include('media.urls')),
-#    path('group/', include('group.urls')),
-#    path('media/', include('mediatek.urls')),
+    path('group/', include('group.urls')),
+    #    path('media/', include('mediatek.urls')),
 ]

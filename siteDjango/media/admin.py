@@ -17,4 +17,3 @@ class MediaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Media, MediaAdmin)
-admin.site.unregister(User)
